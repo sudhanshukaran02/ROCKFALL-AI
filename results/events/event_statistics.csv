@@ -1,0 +1,23 @@
+Metric,Count,Category
+Total Documented Events,10,Overview
+Confirmed Rockfalls,1,Event Type
+Confirmed Slope Failures,1,Event Type
+Wedge Failures,1,Event Type
+Bench Failures,2,Event Type
+Ground Collapses,1,Event Type
+Subsidence Events,1,Event Type
+Ground Fractures,1,Event Type
+Fire-Induced Deformation,1,Event Type
+Roof Collapses,1,Event Type
+Unknown Events,0,Event Type
+Events with Coordinates,9,Spatial Integrity
+Events without Coordinates,1,Spatial Integrity
+Events Inside AOI,6,Spatial Integrity
+Events Outside AOI,3,Spatial Integrity
+Events with Terrain Features,9,Spatial Integrity
+HIGH Confidence Events,9,Source Quality
+MEDIUM Confidence Events,1,Source Quality
+LOW Confidence Events,0,Source Quality
+Rockfall Label = 1 (Confirmed Rockfall),1,ML Labels
+Rockfall Label = 0 (Confirmed Non-Rockfall),7,ML Labels
+Rockfall Label = -1 (Unknown / Insufficient),2,ML Labels

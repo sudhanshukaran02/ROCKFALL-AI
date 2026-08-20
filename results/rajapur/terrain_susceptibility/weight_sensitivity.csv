@@ -1,0 +1,4 @@
+scenario,weights,mean_index,median_index,max_index,high_susceptibility_pct,very_high_susceptibility_pct
+Scenario A (Slope-Heavy),"Slope=0.40, Curv=0.20, Rough=0.20, TWI=0.20",0.3085,0.2467,0.8098,9.25,0.3
+Scenario B (Equal-Weight),"Slope=0.25, Curv=0.25, Rough=0.25, TWI=0.25",0.3161,0.2738,0.7632,6.01,0.0
+Scenario C (Moisture-Heavy),"Slope=0.20, Curv=0.20, Rough=0.20, TWI=0.40",0.3362,0.318,0.6274,1.86,0.0

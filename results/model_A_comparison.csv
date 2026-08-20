@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1-Score,ROC-AUC,FPR,FNR,TP,FP,TN,FN
+Logistic Regression,1.0,1.0,1.0,1.0,1.0,0.0,0.0,150,0,150,0
+Random Forest,1.0,1.0,1.0,1.0,1.0,0.0,0.0,150,0,150,0
+XGBoost,1.0,1.0,1.0,1.0,1.0,0.0,0.0,150,0,150,0
+CatBoost,1.0,1.0,1.0,1.0,1.0,0.0,0.0,150,0,150,0

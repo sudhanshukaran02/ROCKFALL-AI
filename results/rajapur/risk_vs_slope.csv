@@ -1,0 +1,5 @@
+risk_class,point_count,mean_slope_deg,median_slope_deg,max_slope_deg,points_gt_20deg,points_gt_30deg
+LOW,1665,6.76,4.45,37.26,93,16
+MODERATE,0,0.0,0.0,0.0,0,0
+HIGH,0,0.0,0.0,0.0,0,0
+VERY HIGH,0,0.0,0.0,0.0,0,0

@@ -1,0 +1,7 @@
+Category,Range_deg,Pixel_Count,Percentage
+Very Low,0–10°,12556194,96.8304
+Low,10–20°,274757,2.1189
+Moderate,20–30°,110124,0.8493
+High,30–40°,24264,0.1871
+Very High,40–50°,1717,0.0132
+Extreme,>50°,145,0.0011

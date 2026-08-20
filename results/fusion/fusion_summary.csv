@@ -1,0 +1,5 @@
+Risk_Level,Count,Percentage,Evaluation_Note
+LOW,243,48.6,Scenario-based prototype evaluation
+MODERATE,24,4.8,Scenario-based prototype evaluation
+HIGH,229,45.8,Scenario-based prototype evaluation
+CRITICAL,4,0.8,Scenario-based prototype evaluation

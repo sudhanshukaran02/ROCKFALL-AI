@@ -1,0 +1,10 @@
+scenario,description,changed_feature,mean_probability,median_probability,max_probability,low_percent,moderate_percent,high_percent,very_high_percent,mean_absolute_probability_change,max_probability_change,risk_class_change_percent
+SCENARIO_0_BASELINE,Baseline Real Environmental Inputs Dataset,NONE (Baseline),0.224352,0.179751,0.93845,79.76,17.12,2.7,0.42,0.0,0.0,0.0
+SCENARIO_1_LOW_SOIL_SATURATION,Low Soil Saturation (Soil_Saturation = 0.10),Soil_Saturation,0.133761,0.072167,0.963135,90.39,6.67,2.46,0.48,0.095264,0.829108,11.59
+SCENARIO_2_HIGH_SOIL_SATURATION,High Soil Saturation (Soil_Saturation = 0.90),Soil_Saturation,0.795202,0.85252,0.999485,0.0,22.94,26.43,50.63,0.571414,0.786562,99.28
+SCENARIO_3_LOW_VEGETATION,Low Vegetation Cover (Vegetation_Cover = 0.10 - Open Quarry),Vegetation_Cover,0.720634,0.756462,0.994571,2.22,28.23,42.28,27.27,0.496282,0.639087,97.3
+SCENARIO_4_HIGH_VEGETATION,High Vegetation Cover (Vegetation_Cover = 0.80 - Vegetated Buffer),Vegetation_Cover,0.05522,0.039992,0.710732,99.28,0.66,0.06,0.0,0.169133,0.729236,20.24
+SCENARIO_5_ALT_SOIL_SAND,"Alternative Soil Class Sand (Gravel=0, Sand=1, Silt=0)",Soil_Type,0.24216,0.198106,0.94502,75.92,20.3,3.3,0.48,0.017808,0.029957,4.56
+SCENARIO_6_ALT_SOIL_SILT,"Alternative Soil Class Silt (Gravel=0, Sand=0, Silt=1)",Soil_Type,0.460799,0.453263,0.982958,34.83,42.16,18.74,4.26,0.236447,0.320886,64.74
+SCENARIO_7_LOW_SEISMICITY,Low Local Seismicity (Earthquake_Activity = 0.2 Richter),Earthquake_Activity,0.010086,0.00541,0.274555,100.0,0.0,0.0,0.0,0.214266,0.727768,20.24
+SCENARIO_8_HIGH_SEISMICITY,High Seismic Trigger (Earthquake_Activity = 6.0 Richter),Earthquake_Activity,0.408971,0.38929,0.977949,44.32,40.9,12.01,2.76,0.184619,0.260769,49.43

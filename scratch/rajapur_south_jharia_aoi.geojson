@@ -1,0 +1,110 @@
+{
+  "type": "FeatureCollection",
+  "name": "rajapur_south_jharia_proposed_project_area",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rajapur/South Jharia OC - Proposed Project Area",
+        "source_document": "Mine Plan _approvals.pdf",
+        "source_section": "2.1.8 Geo-Referenced Co-ordinates (UTM) of the proposed project area of the Mining Plan",
+        "source_page": 34,
+        "source_job_no": "200221012",
+        "source_utm_zone": "45N",
+        "source_utm_crs": "EPSG:32645",
+        "output_crs": "WGS 84 geographic coordinates (EPSG:4326)",
+        "vertex_count": 18,
+        "note": "Coordinates are a direct transcription of the official UTM vertices and a CRS conversion; no smoothing or buffering applied."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              86.41707628,
+              23.75345739
+            ],
+            [
+              86.41327155,
+              23.75461718
+            ],
+            [
+              86.41222324,
+              23.75708804
+            ],
+            [
+              86.41237329,
+              23.76147828
+            ],
+            [
+              86.41224892,
+              23.76404296
+            ],
+            [
+              86.41440836,
+              23.76460213
+            ],
+            [
+              86.41589408,
+              23.76527614
+            ],
+            [
+              86.41741488,
+              23.76182253
+            ],
+            [
+              86.42019652,
+              23.76082139
+            ],
+            [
+              86.41989084,
+              23.75783056
+            ],
+            [
+              86.42021581,
+              23.75779565
+            ],
+            [
+              86.42093333,
+              23.75642544
+            ],
+            [
+              86.42327492,
+              23.75437484
+            ],
+            [
+              86.42297056,
+              23.75329887
+            ],
+            [
+              86.42466692,
+              23.75112841
+            ],
+            [
+              86.42296786,
+              23.7461182
+            ],
+            [
+              86.42198955,
+              23.74612358
+            ],
+            [
+              86.41497955,
+              23.74922237
+            ],
+            [
+              86.41707628,
+              23.75345739
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
