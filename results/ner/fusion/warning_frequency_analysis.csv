@@ -1,0 +1,4 @@
+operating_mode,threshold,total_days,total_warning_days,warning_percentage,correct_warning_days_tp,false_warning_days_fp,missed_event_days_fn
+Mode A: High-Sensitivity Mode,0.48,337,110,32.640949554896146,9,101,0
+Mode B: Balanced Mode,0.65,337,7,2.0771513353115725,2,5,7
+Mode C: Low-False-Alarm Mode,0.65,337,7,2.0771513353115725,2,5,7

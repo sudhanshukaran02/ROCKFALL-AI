@@ -1,0 +1,4 @@
+persistence_rule,selected_threshold,test_precision,test_recall,test_f1,total_warning_days,false_warning_days_fp,correct_warning_days_tp,missed_event_days_fn
+1-Day Persistence,0.65,0.2857142857142857,0.2222222222222222,0.25,7,5,2,7
+2-Day Persistence,0.65,0.0,0.0,0.0,4,4,0,9
+3-Day Persistence,0.65,0.0,0.0,0.0,1,1,0,9

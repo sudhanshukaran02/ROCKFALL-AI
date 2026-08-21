@@ -1,0 +1,18 @@
+metric,value
+Intersection over Union (IoU),0.25952476872855756
+Dice Coefficient (F1),0.4120995079605111
+Precision,0.2660165061526565
+Recall,0.9140504306428869
+Pixel Accuracy,0.8793601798052737
+True Positives (TP),137858.0
+False Positives (FP),380373.0
+False Negatives (FN),12963.0
+True Negatives (TN),2729222.0
+Landslide Class IoU,0.25952476872855756
+Landslide Class F1,0.4120995079605111
+Landslide Class Precision,0.2660165061526565
+Landslide Class Recall,0.9140504306428869
+Background Class IoU,0.8740340451642504
+Background Class F1,0.9327835291142166
+Background Class Precision,0.995272747827003
+Background Class Recall,0.877677639692626

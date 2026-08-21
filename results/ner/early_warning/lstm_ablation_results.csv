@@ -1,0 +1,8 @@
+experiment,features,sequence_length,best_validation_pr_auc,test_pr_auc,test_roc_auc,precision,recall,f1,specificity
+Exp 1: Rainfall Only,"precipitation, rainfall_1d, rainfall_3d, rainfall_7d, rainfall_14d, rainfall_30d",30,0.13183385944362622,0.127071314739038,0.8729674796747967,0.08695652173913043,0.4444444444444444,0.14545454545454545,0.8719512195121951
+Exp 2: Weather,"precipitation, temperature_mean, relative_humidity, rainfall_1d, rainfall_3d, rainfall_7d, rainfall_14d, rainfall_30d",30,0.13570616193818838,0.14876127694099275,0.8404471544715447,0.1,0.4444444444444444,0.16326530612244897,0.8902439024390244
+Exp 3: Weather + Seasonal,"precipitation, temperature_mean, relative_humidity, rainfall_1d, rainfall_3d, rainfall_7d, rainfall_14d, rainfall_30d, month_sin, month_cos",30,0.11193424814780671,0.11315470260268848,0.7821815718157181,0.08888888888888889,0.4444444444444444,0.14814814814814814,0.875
+Exp 4: Temporal + Spatial/Terrain,"precipitation, temperature_mean, relative_humidity, rainfall_1d, rainfall_3d, rainfall_7d, rainfall_14d, rainfall_30d, month_sin, month_cos, s_terrain, e_spatial",30,0.159819313279774,0.12363381516664741,0.834010840108401,0.1111111111111111,0.3333333333333333,0.16666666666666666,0.926829268292683
+Baseline: Simple Logistic Regression,"rainfall, rolling rainfall 1d..30d",1,0.0,0.17173494154236926,0.8870214752567694,0.06930693069306931,0.7777777777777778,0.12727272727272726,0.7366946778711485
+Baseline A: Daily Rain > p95,precipitation,1,0.0,0.20300671991198616,0.5,0.16666666666666666,0.4444444444444444,0.24242424242424243,0.95
+Baseline B: 7d Rain > p95,rainfall_7d,1,0.0,0.08889929505698643,0.5,0.125,0.4444444444444444,0.1951219512195122,0.95

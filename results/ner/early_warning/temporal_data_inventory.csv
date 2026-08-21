@@ -1,0 +1,13 @@
+Feature,Source,Date_Start,Date_End,Obs_Count,Temporal_Res,Missing_Values,Units,Type,Can_Be_Used_For_LSTM
+Daily Precipitation (rainfall_mm),NASA POWER Agroclimatology API (data/environment/rainfall.csv),2023-01-01,2023-12-31,365,Daily (24h),0,mm/day,Real Observation,YES (Feature Input)
+3-Day Cumulative Rainfall (CR_3),Derived from NASA POWER series,2023-01-03,2023-12-31,363,Daily 3-Day Window,0,mm,Derived Feature,YES (Feature Input)
+7-Day Cumulative Rainfall (CR_7),Derived from NASA POWER series,2023-01-07,2023-12-31,359,Daily 7-Day Window,0,mm,Derived Feature,YES (Feature Input)
+14-Day Cumulative Rainfall (CR_14),Derived from NASA POWER series,2023-01-14,2023-12-31,352,Daily 14-Day Window,0,mm,Derived Feature,YES (Feature Input)
+30-Day Cumulative Rainfall (CR_30),Derived from NASA POWER series,2023-01-30,2023-12-31,336,Daily 30-Day Window,0,mm,Derived Feature,YES (Feature Input)
+Sentinel-1 InSAR Acquisitions,ASF Metadata (data/insar/sentinel1_acquisitions.csv),2018-01-02,2026-08-19,24,12-Day Revisit,0,Metadata Record,Real Metadata,NO (Raw 100GB not downloaded)
+Rajapur Mining Instability Events,data/events/rajapur_instability_events.csv,2018-05-12,2023-09-15,10,Irregular Events,0,Georeferenced Event Log,Real Event Log,NO (Jharia Mining Domain - NOT NER)
+Landslide4Sense Satellite Tiles,data/dataset/ (1980 image/mask pairs),N/A,N/A,1980,None (Static Spatial),0,128x128 PNG Tiles,Static Spatial Image,NO (No Timestamps/Sequence)
+Soil Moisture,None in repository,N/A,N/A,0,N/A,365,m^3/m^3,Unavailable,NO (Requires API ingestion)
+Relative Humidity,None in repository,N/A,N/A,0,N/A,365,%,Unavailable,NO (Requires API ingestion)
+Temperature (Daily Min/Max/Mean),None in repository,N/A,N/A,0,N/A,365,deg C,Unavailable,NO (Requires API ingestion)
+NER Landslide Ground-Truth Event Labels,None in repository,N/A,N/A,0,N/A,365,Binary Target Label (0/1),Absent Target Label,NO (BLOCKED - Target Labels Missing)

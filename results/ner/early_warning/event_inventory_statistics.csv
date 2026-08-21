@@ -1,0 +1,15 @@
+metric,count
+total_discovered_events,50
+verified_events,40
+partially_verified_events,10
+unverified_events,0
+rejected_events,0
+exact_date_events,43
+month_year_events,7
+events_with_valid_coordinates,49
+events_without_coordinates,0
+tier_1_official_events,40
+tier_2_academic_events,10
+high_confidence_events,40
+medium_confidence_events,10
+low_confidence_events,0

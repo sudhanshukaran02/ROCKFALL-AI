@@ -1,0 +1,6 @@
+source_id,publisher,title,url,source_tier,reliability
+SRC_V_001,Geological Survey of India (GSI),National Landslide Susceptibility Mapping (NLSM) & Bhukosh Incident Portal,https://bhukosh.gsi.gov.in,Tier 1,High
+SRC_V_002,National Disaster Management Authority (NDMA),NDMA National Landslide Hazard & Incident Bulletins,https://ndma.gov.in,Tier 1,High
+SRC_V_003,"State Disaster Management Authorities (ASDMA, MSDMA, SSDMA, NSDMA, Mizoram DMRD)",Official State Incident Bulletins & Monsoon Damage Reports,https://sdma.assam.gov.in,Tier 1,High
+SRC_V_004,NASA Goddard Space Flight Center,NASA Global Landslide Catalog (GLC),https://data.nasa.gov,Tier 2,Medium
+SRC_V_005,Springer Nature / Elsevier / ResearchGate,Peer-Reviewed Himalayan & NER Landslide Inventory Publications,https://link.springer.com,Tier 2,Medium

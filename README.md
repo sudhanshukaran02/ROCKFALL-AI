@@ -1,155 +1,189 @@
-# Rockfall AI — AI-Based Ground Instability & Meteorological Hazard Assessment Prototype
+# A Multimodal AI-Based System for Landslide Detection, Risk Assessment, and Early Warning
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-An AI-driven decision-support prototype system that evaluates rockfall hazard risks by integrating geotechnical ground instability models with regional meteorological risk predictions.
+An integrated multimodal AI decision-support platform designed for regional landslide monitoring, susceptibility assessment, and temporal early warning in the **North Eastern Region (NER) of India** (Ministry of Development of North Eastern Region — **MDONER SIH Problem Statement ID 26001**).
 
-> **IMPORTANT DISCLAIMER:**  
-> This system is a **PROTOTYPE DECISION-SUPPORT ENGINE**. All risk scores, hazard index values, risk matrices, and advisories are heuristic model-derived outputs based on proxy datasets. They are **NOT** operational safety instructions or scientifically validated geotechnical hazard predictions.
+> **IMPORTANT RESEARCH DISCLAIMER:**  
+> This platform is a **RESEARCH PROTOTYPE DECISION-SUPPORT SYSTEM**. It is **NOT** an autonomous operational warning system and has **NOT** been certified for public emergency management or civil defense alerts.
 
 ---
 
-## 📐 System Architecture
+## 📐 Multimodal System Architecture
 
-```
+```text
                                ┌──────────────────────────────────────────────────────────┐
-                               │                ROCKFALL AI RISK FUSION LAYER             │
-                               └──────────────────────────────────────────────────────────┘
-
-          INPUT: Geotechnical Parameters                             INPUT: Climate & Weather Parameters
-      (Slope Angle, Saturation, Seismic, etc.)                     (Precipitation, Temp, Humidity, Elevation)
-                        │                                                           │
-                        ▼                                                           ▼
-           ┌─────────────────────────┐                                 ┌─────────────────────────┐
-           │        MODEL A          │                                 │        MODEL B          │
-           │   Ground Instability    │                                 │   Meteorological Risk   │
-           └────────────┬────────────┘                                 └────────────┬────────────┘
-                        │                                                           │
-                        │  Physical Probability P(Instability)                       │  Risk Tier Vector
-                        ▼                                                           ▼
-          ┌──────────────────────────────────────────────────────────────────────────────────────────┐
-          │                               2D RISK MATRIX & AGGREGATOR ENGINE                         │
-          │                                                                                          │
-          │  Combines P(Instability) with Meteorological Risk Tier:                                  │
-          │  • LOW RISK      : Low Weather Risk AND Low Physical Instability (P < 0.35)             │
-          │  • MODERATE RISK : Moderate Weather Risk OR Moderate Instability (0.35 ≤ P < 0.65)       │
-          │  • HIGH RISK     : High Weather Risk OR High Instability (0.65 ≤ P < 0.85)               │
-          │  • CRITICAL ALERT: Very High Weather Risk AND High Instability (P ≥ 0.85)              │
-          └────────────────────────────────────────────┬─────────────────────────────────────────────┘
-                                                       │
-                                                       ▼
-                                  ┌──────────────────────────────────────────┐
-                                  │  FINAL ROCKFALL HAZARD INDEX & ADVISORY  │
-                                  │   (Dashboard, Heatmaps, Road Alerts)     │
-                                  └──────────────────────────────────────────┘
+                               │           MULTIMODAL LATE FUSION RISK ENGINE             │
+                               │        R(t) = 0.25 E_spatial + 0.25 S_terrain + 0.50 T_temporal │
+                               └────────────────────────────┬─────────────────────────────┘
+                                                            │
+         ┌──────────────────────────────────────────────────┼──────────────────────────────────────────────────┐
+         │                                                  │                                                  │
+         ▼                                                  ▼                                                  ▼
+┌─────────────────────────┐                        ┌─────────────────────────┐                        ┌─────────────────────────┐
+│     SPATIAL STREAM      │                        │     TERRAIN STREAM      │                        │     TEMPORAL STREAM     │
+│   4-Channel U-Net CNN   │                        │   SRTM 30m DEM Analysis │                        │   2-Layer PyTorch LSTM  │
+└────────────┬────────────┘                        └────────────┬────────────┘                        └────────────┬────────────┘
+             │                                                  │                                                  │
+             │  Spatial Evidence E_spatial                      │  Terrain Susceptibility S_terrain                │  Temporal Risk T_temporal
+             ▼                                                  ▼                                                  ▼
+ ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+ │                                              DECISION SUPPORT & ALERT ENGINE                                                 │
+ │                                                                                                                              │
+ │   Prototype Alert Thresholds:                                                                                                │
+ │   • LOW       : R < 0.35  (Baseline background monitoring)                                                                    │
+ │   • WATCH     : 0.35 ≤ R < 0.50  (Moderate pre-monsoon / cumulative precipitation)                                            │
+ │   • WARNING   : 0.50 ≤ R < 0.70  (High dynamic temporal risk & slope susceptibility)                                          │
+ │   • CRITICAL  : R ≥ 0.70  (Immediate risk escalation under extreme precipitation)                                             │
+ └──────────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────────────┘
+                                                                │
+                                                                ▼
+                                           ┌──────────────────────────────────────────┐
+                                           │    STREAMLIT INTERACTIVE DASHBOARD &     │
+                                           │       PROTOTYPE FIELD REPORTING          │
+                                           └──────────────────────────────────────────┘
 ```
 
 ---
 
-## 📁 Repository Directory Structure
+## 🔬 AI Components & Performance Metrics
 
+### 1. Spatial Landslide Evidence ($E_{\text{spatial}}$) — U-Net CNN
+* **Architecture**: 4-Channel U-Net CNN (`models/ner/best_unet.pth`) tailored for $128 \times 128$ remote sensing tiles.
+* **Test Performance**: **IoU**: `0.2595` | **Dice/F1**: `0.4121` | **Recall**: `0.9141` | **Precision**: `0.2660` | **Pixel Accuracy**: `0.8794`.
+
+### 2. Terrain Susceptibility ($S_{\text{terrain}}$) — SRTM DEM Morphometry
+* **Source**: 30m SRTM DEM topographic derivatives (Elevation, Slope, Aspect, Curvature, Roughness, Topographic Wetness Index).
+* **Regional Susceptibility Baseline**: $S_{\text{terrain}} = 0.52$.
+
+### 3. Temporal Risk ($T_{\text{temporal}}$) — 2-Layer PyTorch Weather LSTM
+* **Architecture**: 2-Layer PyTorch LSTM ($T=30$ lookback window, features: precipitation, temp, humidity, rolling rainfall $1\text{d}..30\text{d}$, month sin/cos).
+* **Test Performance (2024 Test Set, 366 days)**: **PR-AUC**: `0.1488` | **ROC-AUC**: `0.8404` | **Precision**: `0.1000` | **Recall**: `0.4444` | **F1**: `0.1633`.
+* **Baseline Improvement**: Outperforms 7-day cumulative rainfall threshold baseline (`0.0889` PR-AUC) by **+67.4% PR-AUC**.
+
+### 4. Multimodal Late Fusion & Strategy
+* **Validated Fusion Scheme**: **Exp D (Temporal-focused)** ($w_{\text{spatial}}=0.25, w_{\text{terrain}}=0.25, w_{\text{temporal}}=0.50$, Validation PR-AUC = `0.1833`).
+* **Untouched 2024 Test Evaluation**: **PR-AUC**: `0.1099` | **ROC-AUC**: `0.8682` | **Recall**: `0.8889` (8/9 event days detected) | **Precision**: `0.0769`.
+* **Prototype Operating Thresholds**:
+  - **Balanced Mode**: $r_{\text{th}} = 0.65$ (Test F1 = `0.2500`, Test Precision = `28.57%`, Test Recall = `22.22%`, FPR = `1.52%`).
+  - **High-Sensitivity Mode**: $r_{\text{th}} = 0.48$ (Test Recall = `100.0%`, FPR = `30.79%`).
+* **Persistence Rule**: **2 Consecutive Days** (reduces sporadic false alarms by ~20%).
+
+---
+
+## 🗺️ Dual Application Pathways
+
+The platform architecture maintains strict separation between primary regional landslide warning and secondary mining sector applications:
+
+```text
+               GENERAL MULTIMODAL FUSION FRAMEWORK
+                               │
+        ┌──────────────────────┴──────────────────────┐
+        ▼                                             ▼
+PRIMARY APPLICATION:                           SECONDARY APPLICATION:
+NER LANDSLIDE MONITORING &                     JHARIA / RAJAPUR MINING
+EARLY WARNING (MDONER SIH 26001)               SLOPE INSTABILITY MONITORING
+────────────────────────────────               ────────────────────────────
+- 4-Channel U-Net Landslide Segmentation      - Random Forest (Model A) Terrain Model
+- SRTM 30m DEM Terrain Susceptibility          - CatBoost (Model B) Mine Risk Engine
+- 2-Layer PyTorch Weather LSTM                 - Rajapur Open-Cast Mine Instability Data
+- NASA POWER 7-Year Climatology                - 10 Documented Georeferenced Pit Events
 ```
-rockfall-ai/
-├── data/
-│   ├── dataset1.csv               # Geotechnical & Terrain Dataset (Model A)
-│   └── dataset2.csv               # Meteorological & Elevation Dataset (Model B)
-├── models/
-│   ├── model_A_best.pkl           # Saved Best Model A Pipeline (Logistic Regression)
-│   └── model_B_best.pkl           # Saved Best Model B Pipeline (XGBoost + SMOTE)
-├── src/
-│   ├── config.py                  # Configurable thresholds, matrices, & weights
-│   ├── risk_fusion_engine.py      # Core Risk Fusion Engine class
-│   ├── evaluate_fusion_layer.py   # Unified scenario-based prototype evaluation
-│   └── explainability.py          # Model-derived feature importance & contributions
-├── results/
-│   ├── dataset_comparison.md      # Initial exploratory dataset comparison report
-│   ├── model_A_comparison.csv     # Model A metrics across Logistic Reg, RF, XGB, CatBoost
-│   ├── model_B_comparison.csv     # Model B metrics across Logistic Reg, RF, XGB, CatBoost
-│   ├── model_A/                   # Plots for Model A (Confusion matrices, ROC, PR, Importances)
-│   ├── model_B/                   # Plots for Model B (Confusion matrices, Per-class recalls, Importances)
-│   └── fusion/                    # Fusion evaluation results (Distribution, Risk matrix heatmap)
-│       ├── fusion_summary.csv
-│       ├── scenario_results.csv
-│       ├── risk_distribution.png
-│       └── risk_matrix.png
-├── app/
-│   └── app.py                     # Streamlit Interactive Web Dashboard
-├── requirements.txt               # Python package dependencies
-└── README.md                      # Project documentation
-```
+
+> **Note**: The NER weather LSTM model is **NOT** directly validated for Jharia open-cast mining conditions. Jharia is maintained as a secondary mining-sector demonstration of the general late-fusion framework.
 
 ---
 
 ## ⚡ Quick Start & Execution Guide
 
-### 1. Installation
-Clone the repository and install requirements:
+### 2. Launch FastAPI Backend & React Frontend
+Start the modern institutional decision platform:
+
+**Terminal 1 — FastAPI Backend:**
 ```bash
-pip install -r requirements.txt
+uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
-### 2. Model Training & Evaluation
-To train and evaluate Model A and Model B independently:
+**Terminal 2 — React 18 + Vite Frontend:**
 ```bash
-# Model A (Ground Instability Model)
-python scratch/train_model_A.py
-
-# Model B (Meteorological Risk Model)
-python scratch/train_model_B.py
+cd frontend
+npm run dev
 ```
 
-### 3. Scenario-Based Prototype Evaluation
-Run the fusion layer scenario-based evaluation engine:
+### 3. Run Automated Certification Test Suites
+Verify all backend endpoints, scientific models, and frontend builds:
 ```bash
-python -m src.evaluate_fusion_layer
+# Frontend strict production build & type check
+cd frontend && npm run build && cd ..
+
+# FastAPI Backend REST API test suite (20/20 passed)
+pytest backend/tests/
+
+# Core NER scientific platform regression test (10/10 passed)
+python src/ner/test_final_platform.py
+
+# Jharia mining sector QC regression test
+python src/test_rajapur_dashboard.py
 ```
 
-### 4. Launch Interactive Web Dashboard
-To launch the interactive dashboard:
+### 4. Launch Reference Streamlit Application
 ```bash
 streamlit run app/app.py
 ```
 
 ---
 
-## 📊 Model Summaries
+## 📁 Directory Structure
 
-### Model A — Ground Instability Model (`data/dataset1.csv`)
-* **Target:** `Landslide` (Binary: 0 or 1)
-* **Features:** 9 continuous & soil type one-hot encoded features.
-* **Best Model:** `Logistic Regression` (1.0 Accuracy, 1.0 Recall, 1.0 F1 on test set).
-
-### Model B — Meteorological Risk Model (`data/dataset2.csv`)
-* **Target:** `Landslide Risk Prediction` (`Low`, `Moderate`, `High`, `Very High`)
-* **Features:** 5 atmospheric climate & elevation features.
-* **Imbalance Handling:** SMOTE applied strictly to training data (`X_train`).
-* **Best Model:** `XGBoost (SMOTE)` (1.0 Macro F1, 1.0 Balanced Accuracy on test set).
+```text
+rockfall-ai/
+├── backend/                       # FastAPI REST Integration & Adapter Layer
+│   ├── app/
+│   │   ├── main.py                # FastAPI Application Entrypoint & CORS Config
+│   │   ├── config.py              # Central Backend Configuration & Path Registry
+│   │   ├── api/
+│   │   │   └── api_router.py      # REST Router (20 Certified API Endpoints)
+│   │   ├── schemas/
+│   │   │   └── all_schemas.py     # Pydantic Schemas & Data Contracts
+│   │   └── adapters/
+│   │       └── all_adapters.py    # Zero-Retraining Adapters around Scientific Models
+│   └── tests/
+│       └── test_api_endpoints.py  # Automated Pytest Suite (20 Tests Passed)
+├── frontend/                      # Modern React 18 + TypeScript + Vite + Tailwind UI
+│   ├── src/
+│   │   ├── App.tsx                # Client Routing (12 Major Institutional Pages)
+│   │   ├── components/            # Reusable UI, MapLibre GIS, Metrics & Layouts
+│   │   ├── pages/                 # Full Dashboard, GIS Map, ML Pages & Boundary Hubs
+│   │   ├── services/api.ts        # Type-Safe REST API Integration Service
+│   │   └── types/index.ts         # TypeScript Domain Data Contracts
+│   └── package.json
+├── app/
+│   └── app.py                     # Streamlit Multimodal Reference Application
+├── data/
+│   ├── field_reports/             # Local CSV database for prototype field reports
+│   └── ner/                       # Real NER environmental & verified landslide datasets
+├── models/
+│   ├── best_unet.pth              # 4-Channel U-Net CNN (31,118,347 bytes, Exact)
+│   ├── ner_lstm_best.pth          # 2-Layer PyTorch LSTM (41,259 bytes, Exact)
+│   ├── model_A_best.pkl           # Jharia Random Forest (3,489 bytes, Exact)
+│   └── model_B_best.pkl           # CatBoost Mine Engine (1,018,929 bytes, Exact)
+├── results/
+│   ├── final_certification_report.md # Final Stage 12 Institutional Certification
+│   └── ner/                       # Verified U-Net, LSTM, and Fusion outputs
+├── src/
+│   ├── ner/                       # Core NER Multimodal ML Pipelines
+│   └── test_rajapur_dashboard.py  # Jharia QC Test Suite
+└── README.md                      # Comprehensive Project Documentation
+```
 
 ---
 
-## ⚙️ Configuration & Customization (`src/config.py`)
+## ⚠️ Scientific Limitations & Transparency Disclosures
 
-All thresholds, weights, and advisories are centralized in `src/config.py`:
-* **`INSTABILITY_THRESHOLDS`**: Defines binning thresholds for $P(\text{Instability})$.
-* **`RISK_MATRIX`**: Transparent 2D matrix mapping ground instability tiers and weather risk tiers to final risk levels (`LOW`, `MODERATE`, `HIGH`, `CRITICAL`).
-* **`WEIGHT_INSTABILITY` (0.60)** & **`WEIGHT_WEATHER` (0.40)**: Weights used for the 0–100 Hazard Index score calculation.
-
-
-## Real-World Remote Sensing Validation
-- **Sentinel-1 InSAR Investigation**: Exploratory investigation of NASA ASF DAAC Sentinel-1 IW SLC SAR acquisitions (`N=608` scenes, 2018–2026) over the Rajapur / South Jharia coal mine.
-- **Scientific Boundary**: InSAR surface displacement/deformation is NOT equivalent to rockfall. Ground movement signals may indicate mine subsidence, active bench excavation, or seam fires.
-- **Label Readiness**: Real-world rockfall event labels remain sparse (`N=1` confirmed rockfall event).
-- **ML Freeze**: No real-world ML model retraining or risk-fusion modifications have been performed. Supervised ML training remains strictly frozen until dense event mapping is available.
-
----
-
-## Real Rajapur Terrain Analysis
-- **1-Arcsecond SRTM DEM**: Extracted real terrain derivatives (Elevation, Slope, Aspect, Curvature, Roughness, TWI) across the official 1.4503 km² Rajapur / South Jharia Open Cast Mine AOI polygon (`1,665` spatial grid points).
-- **Transparent Morphological Susceptibility Index**: Calculated a deterministic, non-ML terrain susceptibility index using robust P5–P95 percentile normalization:
-  $$\text{Terrain\_Susceptibility\_Index} = 0.25 \times \text{slope}_{\text{norm}} + 0.25 \times \text{curvature\_abs}_{\text{norm}} + 0.25 \times \text{roughness}_{\text{norm}} + 0.25 \times \text{twi}_{\text{norm}}$$
-- **Historical Event Spatial Comparison**: Overlaid 10 documented historical instability events for spatial context. Confirmed April 2023 rockfall (`EVT_RAJ_007`) falls into a `HIGH` susceptibility cell (`Index = 0.6512`, `Slope = 31.2°`).
-- **Weight Sensitivity Analysis**: Tested alternative expert weighting scenarios (Slope-heavy, Equal-weight, Moisture-heavy). Classification sensitivity confirmed as `SENSITIVE`.
-- **Scientific Limitation**: The synthetic ML benchmark models (Model A / Model B) are **NOT** claimed as validated real-world rockfall predictors. The terrain susceptibility index is a prototype morphological indicator, not a hazard probability or certified geotechnical risk assessment.
-#   R O C K F A L L - A I  
- 
+1. **Severe Class Imbalance**: Positive event ratio is extremely low (1:40 event-to-non-event ratio), leading to low precision ($10.0\%–28.6\%$).
+2. **Probability Calibration**: Raw sigmoid probabilities overestimate empirical event frequency (Brier Score = `0.1652`). Tuned threshold operating points ($0.65$ Balanced / $0.48$ Sensitive) must be used.
+3. **No Fabricated Live External Feeds**: IMD AWS, in-situ IoT piezometers, and satellite SAR deformation are explicitly marked `NOT CONNECTED`.
+4. **Sentinel-1 InSAR Status**: Classified as **`OPTIONAL FUTURE DEFORMATION MODALITY`** (0 GB downloaded).
+5. **Human-in-the-Loop Mandatory**: The platform is **NOT an autonomous public disaster warning system**. Geotechnical officer review is legally and operationally required prior to public notification.

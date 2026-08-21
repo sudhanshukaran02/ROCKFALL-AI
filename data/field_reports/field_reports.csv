@@ -1,0 +1,41 @@
+report_id,timestamp,latitude,longitude,incident_type,severity,description,photo_path,status,reporter_name,infrastructure_affected,road_blocked,reviewer_notes,verified_at
+REP-148E54F6,2026-08-21 20:00:45,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-EE50E9ED,2026-08-21 20:34:38,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-E74D3020,2026-08-21 20:42:33,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-C0457FCA,2026-08-21 20:45:44,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,SUBMITTED_PROTOTYPE,,,,,
+REP-56536698,2026-08-21 20:47:17,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,SUBMITTED_PROTOTYPE,,,,,
+REP-97AA8D21,2026-08-21 20:47:32,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-46D342D9,2026-08-21 20:54:52,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,SUBMITTED_PROTOTYPE,,,,,
+REP-EE96C487,2026-08-21 20:56:42,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-EAF2B1D3,2026-08-21 21:00:48,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,SUBMITTED_PROTOTYPE,,,,,
+REP-AC9B34DA,2026-08-21 21:00:56,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-0090E773,2026-08-21 21:06:10,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,SUBMITTED_PROTOTYPE,,,,,
+REP-86E63B12,2026-08-21 21:06:19,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-6FFA02A4,2026-08-21 21:10:40,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,SUBMITTED_PROTOTYPE,,,,,
+REP-E683ABED,2026-08-21 21:10:49,25.5788,91.8933,Landslide,HIGH,Test verification report,,SUBMITTED_PROTOTYPE,,,,,
+REP-22A58E5B,2026-08-21 21:14:08,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-7B21177F,2026-08-21 21:14:08,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,PENDING_VERIFICATION,Field Officer K. Sharma,NH-6 Bypass,True,,
+REP-C886C5E5,2026-08-21 21:14:50,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-F76BC4FD,2026-08-21 21:14:50,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:14:50
+REP-114DB1E9,2026-08-21 21:15:12,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-6126309D,2026-08-21 21:15:12,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:15:12
+REP-92FFFFEC,2026-08-21 21:17:53,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-323C6F56,2026-08-21 21:17:53,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:17:53
+REP-CFDAA45C,2026-08-21 21:18:00,25.5788,91.8933,Landslide,HIGH,Test verification report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-37E0245E,2026-08-21 21:21:54,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-B6431BEE,2026-08-21 21:21:55,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:21:55
+REP-4353D4C8,2026-08-21 21:22:17,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-97468C60,2026-08-21 21:22:17,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:22:17
+REP-D8E26180,2026-08-21 21:22:26,25.5788,91.8933,Landslide,HIGH,Test verification report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-9C69E49B,2026-08-21 21:26:47,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-B2B67937,2026-08-21 21:26:48,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:26:48
+REP-9FDE19E2,2026-08-21 21:26:54,25.5788,91.8933,Landslide,HIGH,Test verification report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-85D51850,2026-08-21 21:31:19,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-7D2A1BC2,2026-08-21 21:31:20,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:31:20
+REP-7D439D0A,2026-08-21 21:31:42,25.5788,91.8933,Landslide,HIGH,Test verification report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-FF6F7312,2026-08-21 21:34:22,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-18AA18AD,2026-08-21 21:34:22,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:34:22
+REP-AFF220BD,2026-08-21 21:34:31,25.5788,91.8933,Landslide,HIGH,Test verification report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-3AB6D063,2026-08-21 21:54:22,25.5788,91.8933,Crack,HIGH,Pytest verification observation report,,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,
+REP-270EE860,2026-08-21 21:54:22,25.5788,91.8933,SLOPE_FAILURE,HIGH,Debris observed across road shoulder on Shillong bypass,,VERIFIED,Field Officer K. Sharma,NH-6 Bypass,True,Geotechnical team validated active slip plane.,2026-08-21 21:54:22
+REP-2A52CF58,2026-08-21 21:54:30,25.5788,91.8933,Landslide,HIGH,Test verification report,None,PENDING_VERIFICATION,Citizen / Field Engineer,Road / Slope Transit,False,,

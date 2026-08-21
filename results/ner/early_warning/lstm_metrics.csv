@@ -1,0 +1,15 @@
+metric,value
+test_roc_auc,0.8682249322493225
+test_pr_auc,0.10985539931060892
+test_precision,0.1
+test_recall,0.5555555555555556
+test_f1_score,0.1694915254237288
+test_specificity,0.8628048780487805
+test_balanced_accuracy,0.709180216802168
+best_threshold,0.7
+baseline_a_prauc,0.20300671991198613
+baseline_b_prauc,0.08889929505698643
+tp,5.0
+fp,45.0
+tn,283.0
+fn,4.0
